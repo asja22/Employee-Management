@@ -1,0 +1,5 @@
+
+    <tr>
+    <td><%= result.empid%></td> <td><%= result.name%></td> <td><%= result.email%></td> <td><%= result.department.name%></td> <td><%= result.position.name%></td> <td><%= link_to "view", employee_path(result) %></td> <td><%= link_to "Edit", edit_employee_path(result) %></td> <td><%= link_to "delete", result, method: :delete, data: { confirm: "You sure?" } %></td>
+    </tr>
+	

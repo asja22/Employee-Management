@@ -1,0 +1,13 @@
+<Center>
+<h1>Employee Management Page</h1>
+
+
+<P>Welcome ! <%= current_user.name %></p>
+<p><%= link_to "Create New Employee", new_path, class: "btn btn-primary" %></p>
+<p><%= link_to "List Of Employees", employees_path, class: "btn btn-primary" %></p>
+<p>-----------------------</p>
+<p><%= link_to "Back Home", root_path, class: "btn btn-primary" %></p>
+
+
+<p>Find me in app/views/Pages/home.html.erb</p>
+</Center>

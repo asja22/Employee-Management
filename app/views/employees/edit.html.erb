@@ -1,0 +1,92 @@
+<center>
+<h1>Edit Employee Details</h1>
+
+<%= form_for(@employee) do |f| %>
+<div class="container">
+<% if @employee.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@employee.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @employee.errors.full_messages.each do |msg| %>
+      <table width="20%">
+	  <tr>
+	  <td><li><%= msg %></li></td>
+      </tr>
+      </table>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+</div>
+
+
+	<table id="table1">
+      
+	  <tr>
+	  <div class="field">
+	  <td><%= f.label :empid %> : &nbsp </td>
+      <td><%= f.text_field :empid %></td>
+      </div>
+      </tr>
+
+      <tr>
+	  <div class="field">
+	  <td><%= f.label :name %> : &nbsp </td>
+      <td><%= f.text_field :name %></td>
+      </div>
+      </tr>
+	  
+	  <tr>
+	  <div class="field">
+	  <td><%= f.label :doj , 'Date of Joining (yy-mm-dd) : '%> </td>
+      <td><%= f.text_field :doj%> </td>
+      </div>
+      </tr>
+
+      <tr>
+	  <div class="field">
+	  <td><%= f.label :email %> : &nbsp </td>
+      <td><%= f.email_field :email%></td>
+      </div>
+      </tr>
+	  
+  <!--   <p><%= f.label :department %>
+      <%= f.text_field :department, class: 'form-control' %></p> 
+	  
+	  <tr>
+	  <div class="field">
+	  <td><%= f.label :department %> : &nbsp </td>
+      <td><%= f.select :department ,[['HR','HR'],['IT','IT'],['Production','Production'],['Quality Control','Quality Control']]%></td>
+      </div>
+      </tr>
+	  
+      <tr>
+	  <div class="field">
+	  <td><%= f.label :position %> : &nbsp </td>
+      <td><%= f.text_field :position, class: 'field' %></td>
+      </div>
+      </tr> -->
+	  
+	  <tr>
+	  <div class="field">
+	  <td><%= f.label :department_id , 'Department : '%> </td>
+      <td><%= f.collection_select :department_id ,Department.order(:name),:id,:name, include_blank: true %> </td>
+      </div>
+      </tr>
+	  
+	  <tr>
+	  <div class="field">
+	  <td><%= f.label :position_id, 'Position : ' %> </td>
+	  <td><%= f.grouped_collection_select :position_id ,Department.order(:name),:position,:name,:id,:name, include_blank: true %> </td>
+      </div>
+	  <tr>
+  </table>
+  
+      <p><%= f.submit "Save changes", class: "btn btn-primary" %></p>
+    <% end %>
+<p><%= link_to "Back", emphome_path %></p>
+<p><%= link_to "Back to home", root_path %></p>
+<p>Find me in app/views/employees/edit.html.erb</p>
+</center>

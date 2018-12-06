@@ -1,0 +1,11 @@
+<div class="container">	
+
+<h3>Search Employees by name or Department</h3>
+<%= form_tag(search_path, :method => "get", class: 'navbar-form navbar-center') do %>  
+	<table id="table3">
+	    <tr><td>Name : </td> <td><%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %></td> </tr>
+		<tr><td>Department : </td> <td><%= select_tag :department,options_from_collection_for_select(Department.all, :id, :name, params[:department]), include_blank: true %>  </td></tr>
+    </table>
+      <p><%= button_tag "Search Employee", :class => 'btn btn-primary',:name => nil%>  </p>
+<% end %>
+</div>

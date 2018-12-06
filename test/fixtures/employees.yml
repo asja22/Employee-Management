@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  empid: 1
+  name: MyString
+  email: MyString
+  department: MyString
+  position: MyString
+  user: one
+
+two:
+  empid: 1
+  name: MyString
+  email: MyString
+  department: MyString
+  position: MyString
+  user: two

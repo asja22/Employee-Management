@@ -1,0 +1,36 @@
+<center>
+	
+<%= render 'employees/shared/search' %>
+
+<div class="container">
+<h1>List of All Employees</h1>
+<div class="table-responsive"> 
+<table class="table table-hover" border="1">
+  <tr>
+    <th>Sl. No. &nbsp; &nbsp; &nbsp;</th>
+    <th>Employee ID &nbsp; &nbsp; </th>
+    <th>Employee Name &nbsp; &nbsp; </th>
+	<th>Employee E-Mail &nbsp; &nbsp; </th>
+	<th>Department &nbsp; &nbsp; </th>
+	<th>Position &nbsp; &nbsp; </th>
+	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+	
+	
+  </tr>
+<% @employee.each do |employee| %>
+
+    <tr>
+    <td><%= employee.id%></td> <td><%= employee.empid%></td> <td><%= employee.name%></td> <td><%= employee.email%></td> <td><%= employee.department.name%></td> <td><%= employee.position.name%></td> <td><%= link_to "view", employee_path(employee) %></td> <td><%= link_to "Edit", edit_employee_path(employee) %></td> <td><%= link_to "delete", employee, method: :delete, data: { confirm: "You sure?" } %></td>
+    </tr>
+<% end %>
+
+</table>
+</div></div></br>
+<p><%= link_to "Add Employee", new_path, class: "btn btn-primary"%></ %></p>
+<p><%= link_to "Back", emphome_path %></p>
+<p><%= link_to "Back to home", root_path %></p>
+<p>Find me in app/views/employees/list.html.erb</p>
+</div>
+</center>

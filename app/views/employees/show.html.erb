@@ -1,0 +1,47 @@
+<center>
+<h1>Employee Details</h1>
+
+<table class="table table-hover" style="width:30%"; border="1">
+  <tr>
+    <th>Employee ID: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.empid%></th>	
+  </tr>
+  
+  <tr>
+    <th>Employee Name: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.name%> &nbsp; &nbsp; </th>	
+  </tr>
+  
+  <tr>
+    <th>Date of Joining(yy-mm-dd): &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.doj%> &nbsp; &nbsp; </th>	
+  </tr>
+  
+  <tr>
+    <th>E-Mail: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.email%> &nbsp; &nbsp; </th>	
+  </tr>
+  
+  <tr>
+    <th>Department: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.department.name%> &nbsp; &nbsp; </th>	
+  </tr>
+  
+  <tr>
+    <th>Position: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.position.name%> &nbsp; &nbsp; </th>	
+  </tr>
+</table>
+<!--<p>Employee ID :<%= @employee.empid%></p> 
+<p>Employee Name :<%= @employee.name%></p>
+<p>Employee E-Mail :<%= @employee.email%></p>
+<p>Employee Department :<%= @employee.department%></p>
+<p>Employee Position :<%= @employee.position%></p> -->
+
+<!--<%= @employee.name%>, <%= @employee.email%>, <%= @employee.department%>, <%= @employee.position%>, -->
+
+<p><%= link_to "Edit", edit_employee_path(@employee) %></p>
+<p><%= link_to "Back to Employees list", employees_path %></p>
+<p><%= link_to "Back to home", root_path %></p>
+<p>Find me in app/views/employees/list.html.erb</p>
+</center>

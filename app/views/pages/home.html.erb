@@ -1,0 +1,19 @@
+<div class="container">
+<div class="center jumbotron">
+<h1>Employee Management Web App</h1>
+<h2><kbd>(Authentication using Devise Gem)</kbd></h2>
+	
+
+<% if user_signed_in? %>
+<P>Welcome ! <%= current_user.name %></p>
+<P><%= link_to 'Edit Profile', edit_user_registration_path, class: "btn btn-primary" %></p>
+<p><%= link_to "Sign Out", destroy_user_session_path, :method => :delete , class: "btn btn-primary" %></p>
+<p>-----------------------</p>
+<p><%= link_to "Manage Employees", emphome_path , class: "btn btn-primary"  %></p>
+<% else %>
+<p><%= link_to "Sign In", new_user_session_path , class: "btn btn-primary"%></p>
+<p><%= link_to "New User Registration", new_user_registration_path , class: "btn btn-primary"%></p>
+<% end %>
+
+</div>
+</div>
