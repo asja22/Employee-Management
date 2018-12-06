@@ -1,7 +1,7 @@
 require 'csv'
 
 puts "Importing departmet..."
-CSV.foreach(Rails.root.join("department.csv"), headers: true) do |row|
+CSV.foreach(Rails.root.join("departments.csv"), headers: true) do |row|
   Department.create! do |deprtment|
     department.name = row[0]
   end
