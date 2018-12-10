@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  
+  before_action :authenticate_user!
   def home
   end
   
@@ -20,14 +20,7 @@ class EmployeesController < ApplicationController
   end
   
   def create
-      @employee = current_user.employees.new(employee_params)
-      
-      #department=Department.find(params[:department_id])
-      #position=Position.find(params[:position_id])
-      
-      #@employee.department=department.name
-      #@employee.position=position.name
-      
+      @employee = current_user.employees.new(employee_params)   
       if @employee.save
         flash[:success] = "New Employee Created"
         redirect_to @employee
